@@ -1,0 +1,14 @@
+        data.driver.findElement(By.className("result-code"));
+        mensajeRespuesta.append(data.driver.findElement(By.className("result-code")).getText());
+        // aqui hay que pasar al click
+        data.driver.findElement(By.className("btn-continue")).click();
+
+        WebDriverWait webwait = new WebDriverWait(data.driver, 10);
+
+        ds_reponse.append(webwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+            "/html/body/div/div[1]/table/tbody/tr/td/div[2]/table/tbody/tr/td/div/table/tbody/tr/td/div/p[4]")))
+            .getText());
+
+        errorDS = driverA.getDS_Response_ticket(ds_reponse.toString());
+
+        // relaiza una busqueda cada medio segundo hasta 10 segundos hasta que este el elemnto
