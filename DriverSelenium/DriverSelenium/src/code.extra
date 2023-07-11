@@ -12,3 +12,4 @@
         errorDS = driverA.getDS_Response_ticket(ds_reponse.toString());
 
         // relaiza una busqueda cada medio segundo hasta 10 segundos hasta que este el elemnto
+        // pero es hasta que aparezca el elemento
