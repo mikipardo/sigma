@@ -1,0 +1,14 @@
+WebDriverWait wait = new WebDriverWait(driver,10);
+
+wait.until(new ExpectedCondition<Boolean>() {
+    public Boolean apply(WebDriver driver) {
+        WebElement button = driver.findElement(By.xpath("xpath"));
+        String enabled = button.getAttribute("aria-disabled");
+        if(enabled.equals("true")) 
+            return true;
+        else
+            return false;
+    }
+});
+
+// esperame hasta que este atributo este disponible
