@@ -20,8 +20,8 @@ public class IframeDriver {
     WebDriver driver = new ChromeDriver();
 
     driver.get("https://sis-d.redsys.es/sis/simulador/realizarPago.html");
-    // esperamos a cargar elemento
-    WebDriverWait wait = new WebDriverWait(driver, 10000);
+    // esperamos a cargar elemento recuerda eque es en segundo
+    WebDriverWait wait = new WebDriverWait(driver, 10);
     WebElement tarjetaImg = wait.until(ExpectedConditions
         .visibilityOfElementLocated(By.xpath("/html/body/form[2]/table[1]/tbody/tr/td[1]/b/a")));
 
