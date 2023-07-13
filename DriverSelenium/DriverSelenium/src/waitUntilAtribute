@@ -1,5 +1,5 @@
 WebDriverWait wait = new WebDriverWait(driver,10);
-
+// el 10 es segundos
 wait.until(new ExpectedCondition<Boolean>() {
     public Boolean apply(WebDriver driver) {
         WebElement button = driver.findElement(By.xpath("xpath"));
