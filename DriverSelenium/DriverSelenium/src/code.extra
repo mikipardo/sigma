@@ -13,3 +13,9 @@
 
         // relaiza una busqueda cada medio segundo hasta 10 segundos hasta que este el elemnto
         // pero es hasta que aparezca el elemento
+
+    WebDriverWait webwait = new WebDriverWait(data.driver, 10);
+  webwait.until(ExpectedConditions.elementToBeClickable(By.xpath( 
+         "//*[@id=\"page-content-wrapper\"]/div[2]/div/div/div/form/div[2]/div[5]/div[1]/label/input")))
+     .click();
+
