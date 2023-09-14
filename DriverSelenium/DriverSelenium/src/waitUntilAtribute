@@ -12,3 +12,29 @@ wait.until(new ExpectedCondition<Boolean>() {
 });
 
 // esperame hasta que este atributo este disponible
+// SE PUEDE CREAR UN METODO PARECIDO A ESTE QUE LE PASES EL XPATH; EL DRIVER Y LOS SEGUNDOS PARA QUE ESPERE
+// OTRA VARIANTE ES DEFINIENDO UN WEBDRIVERWAIT GENERAL QUE AFECTE A TODO SI NO PONES NADA POR PARAMETROS
+// LA MEJORA CHUPI PIRULI SERIA QUE UNA CONSTANTE DEFIENIERA LA VARIABLE PARA QUE UN SWITCHT DETERMINARA SI
+// VA POR XPATH;ID;NAME...
+
+public WebElement getElement(WebDriver driver, String XPATH, int timeoutInSeconds){
+    WebElement elem = null;
+    try{
+        WebDriverWait wait = new WebDriverWait(webDriver, timeoutInSeconds);
+        elem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(XPATH));
+    } catch (Exception e){
+        // log or print error.
+    }
+    return elem;
+}
+You can then call it like
+
+WebElement e = getElement(driver, "//input[@value='Continue to Payment']", 10); 
+if (e != null) {
+    e.click();
+} else {
+  e = getElement(driver, "//input[@value='Paiement']", 5);
+  if (e != null) {
+    e.click();
+  } /// and so on....
+}
